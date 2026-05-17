@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Borborema Ordinária | Voz da comunidade</title>
+  <meta name="description" content="Portal da Borborema Ordinária com notícias, ações, parceiros, BorboCast, BorboShop e contato direto com a comunidade." />
+  <base href="/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBg: '#090909',
+            brandBgSoft: '#121212',
+            brandCard: '#161616',
+            brandLine: 'rgba(255,255,255,.08)',
+            brandGold: '#F4C430',
+            brandGoldSoft: '#FFD95A',
+            brandText: '#F5F5F5',
+            brandMuted: '#B8B8B8',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 16px 45px rgba(0,0,0,.28)',
+            glow: '0 0 0 1px rgba(244,196,48,.15), 0 12px 40px rgba(244,196,48,.08)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background: #090909; color: #F5F5F5; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    .glass-nav { background: rgba(10,10,10,.84); backdrop-filter: blur(16px); }
+    .fade-up { animation: fadeUp .7s ease both; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .hero-grid::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+      pointer-events: none;
+    }
+    .section-divider { border-top: 1px solid rgba(255,255,255,.07); }
+    .gold-ring { box-shadow: 0 0 0 1px rgba(244,196,48,.16), 0 12px 48px rgba(244,196,48,.08); }
+    .map-overlay {
+      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.55));
+    }
+    .clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="antialiased pt-24 md:pt-28 bg-brandBg text-brandText">
+  <nav class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-20 flex items-center justify-between gap-4">
+        <a href="#topo" class="flex items-center gap-3 min-w-0">
+          <div class="w-12 h-12 rounded-2xl bg-brandGold/10 border border-brandGold/20 flex items-center justify-center text-brandGold font-extrabold text-lg">BO</div>
+          <div class="leading-none min-w-0">
+            <p class="font-serif font-bold text-xl text-brandGold truncate">BORBOREMA</p>
+            <p class="text-[10px] uppercase tracking-[0.28em] text-brandMuted font-semibold truncate">Ordinária • voz da comunidade</p>
+          </div>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-brandMuted">
+          <a href="#comunidade" class="hover:text-brandGold transition">Comunidade</a>
+          <a href="#noticias" class="hover:text-brandGold transition">Notícias</a>
+          <a href="#eventos" class="hover:text-brandGold transition">Eventos</a>
+          <a href="#parceiros" class="hover:text-brandGold transition">Parceiros</a>
+          <a href="#borbocast" class="hover:text-brandGold transition">BorboCast</a>
+          <a href="#shop" class="hover:text-brandGold transition">BorboShop</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a id="nav-instagram-link" href="#" target="_blank" class="hidden sm:inline-flex items-center gap-2 border border-brandGold/25 text-brandGold hover:bg-brandGold hover:text-black transition rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a id="nav-whatsapp-link" href="https://wa.me/5581979030733" target="_blank" class="inline-flex items-center gap-2 bg-brandGold hover:bg-brandGoldSoft text-black transition rounded-full px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wide shadow-soft">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="topo">
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,196,48,.14),transparent_30%),linear-gradient(to_bottom,#090909,#111111)]"></div>
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="absolute -top-24 right-0 w-[30rem] h-[30rem] bg-brandGold/10 rounded-full blur-3xl"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 lg:py-24">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="fade-up">
+            <span id="hero-badge" class="inline-flex items-center gap-2 bg-brandGold/10 text-brandGold rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-5 border border-brandGold/15">
+              <i class="fas fa-bullhorn"></i> Desde 22 de maio de 2022
+            </span>
+            <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
+              A página que mostra o <span class="text-brandGold">verdadeiro valor</span> da Borborema.
+            </h1>
+            <p id="hero-description" class="text-base sm:text-lg text-brandMuted leading-relaxed max-w-2xl mb-8">
+              Informação, humor, utilidade pública, ações sociais e oportunidades em um só lugar. Um projeto criado dentro da comunidade para valorizar seu povo, sua história e sua força.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 mb-8">
+              <a id="hero-primary-link" href="https://wa.me/5581979030733" target="_blank" class="inline-flex items-center justify-center gap-2 bg-brandGold hover:bg-brandGoldSoft text-black transition rounded-full px-7 py-4 text-sm font-bold uppercase tracking-wide shadow-soft">
+                <i class="fab fa-whatsapp"></i> <span id="hero-primary-label">Falar no WhatsApp</span>
+              </a>
+              <a id="hero-secondary-link" href="#comunidade" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-brandText transition rounded-full px-7 py-4 text-sm font-bold uppercase tracking-wide border border-white/10">
+                <i class="fas fa-location-dot text-brandGold"></i> <span id="hero-secondary-label">Conheça a comunidade</span>
+              </a>
+            </div>
+
+            <div id="hero-pills" class="flex flex-wrap gap-3 text-sm">
+              <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/5 border border-white/10 text-brandMuted">Comunidade</span>
+              <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/5 border border-white/10 text-brandMuted">Utilidade pública</span>
+              <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/5 border border-white/10 text-brandMuted">Ações sociais</span>
+              <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/5 border border-white/10 text-brandMuted">Empreendedorismo local</span>
+            </div>
+          </div>
+
+          <div class="fade-up lg:justify-self-end">
+            <div class="relative max-w-xl mx-auto gold-ring rounded-[2rem] p-2 bg-white/[0.03] border border-white/10">
+              <img id="hero-image" src="https://i.imgur.com/NdwJ4Zm.jpeg" alt="Melk, fundador da Borborema Ordinária" class="w-full h-[520px] object-cover rounded-[1.5rem] bg-brandBgSoft">
+              <div class="absolute -bottom-5 -left-3 sm:-left-7 bg-black/90 rounded-[1.6rem] p-4 sm:p-5 shadow-2xl border border-brandGold/20 max-w-[300px]">
+                <p id="hero-card-title" class="font-serif text-2xl font-black text-brandGold leading-none mb-1">Melk</p>
+                <p id="hero-card-subtitle" class="text-xs text-brandMuted uppercase tracking-widest">Fundador • liderança comunitária</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comunidade" class="section-divider py-14 md:py-20 bg-brandBgSoft">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[1.05fr,0.95fr] gap-10 items-start">
+          <div>
+            <span class="inline-flex items-center gap-2 text-brandGold bg-brandGold/10 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+              <i class="fas fa-map-location-dot"></i> Conheça a Borborema
+            </span>
+            <h2 id="community-title" class="text-3xl sm:text-4xl font-bold mb-4">Muito mais do que um lugar no mapa.</h2>
+            <p id="community-description" class="text-brandMuted leading-8 text-base sm:text-lg">
+              A Borborema é uma comunidade marcada por identidade, história, pertencimento e força coletiva. Mais do que território, ela representa a vida de milhares de pessoas, famílias, comerciantes, trabalhadores, jovens e lideranças que constroem diariamente sua própria realidade.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 mt-8" id="community-stats-grid">
+              <div class="rounded-[1.75rem] bg-black/35 border border-white/10 p-6">
+                <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-2">População estimada</p>
+                <p class="text-4xl font-extrabold">9 mil+</p>
+                <p class="text-sm text-brandMuted mt-2">Levantamentos locais e referências comunitárias.</p>
+              </div>
+              <div class="rounded-[1.75rem] bg-black/35 border border-white/10 p-6">
+                <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-2">Eleitores estimados</p>
+                <p class="text-4xl font-extrabold">3.500+</p>
+                <p class="text-sm text-brandMuted mt-2">Números em atualização conforme base comunitária.</p>
+              </div>
+              <div class="rounded-[1.75rem] bg-black/35 border border-white/10 p-6">
+                <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-2">Abrangência</p>
+                <p class="text-2xl font-extrabold leading-tight">Recife e Jaboatão</p>
+                <p class="text-sm text-brandMuted mt-2">Influência territorial e conexão regional forte.</p>
+              </div>
+              <div class="rounded-[1.75rem] bg-black/35 border border-white/10 p-6">
+                <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-2">Vocação</p>
+                <p class="text-2xl font-extrabold leading-tight">Cultural, social e política</p>
+                <p class="text-sm text-brandMuted mt-2">Potencial comunitário que merece visibilidade e respeito.</p>
+              </div>
+            </div>
+
+            <div class="mt-6 rounded-[1.6rem] bg-brandGold/8 border border-brandGold/15 px-5 py-4 text-sm text-brandMuted">
+              Números apresentados como <strong class="text-brandText">estimativas locais</strong>, sujeitos a atualização por levantamentos comunitários e referências futuras.
+            </div>
+          </div>
+
+          <div>
+            <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 shadow-soft">
+              <img id="community-map-image" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1400&q=80" alt="Mapa ilustrativo da comunidade" class="w-full h-[480px] object-cover opacity-85">
+              <div class="absolute inset-0 map-overlay"></div>
+              <div class="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+                <div class="rounded-[1.5rem] bg-black/70 border border-white/10 p-5">
+                  <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-2">Área da comunidade</p>
+                  <h3 id="community-map-title" class="font-serif text-2xl font-bold mb-3">Espaço preparado para a foto aérea oficial da Borborema</h3>
+                  <p id="community-map-caption" class="text-sm leading-7 text-brandMuted">
+                    Aqui entrará a imagem aérea do Google Maps ou um mapa estilizado com delimitação visual da comunidade, reforçando sua dimensão e sua presença territorial.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section-divider py-14 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-10 items-start">
+          <div>
+            <span class="inline-flex items-center gap-2 text-brandGold bg-brandGold/10 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+              <i class="fas fa-fire"></i> Sobre o projeto
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Mais do que uma página, um movimento.</h2>
+            <p id="about-project-text-1" class="text-brandMuted leading-8 text-base sm:text-lg mb-4">
+              A Borborema Ordinária nasceu com um propósito simples, mas poderoso: mostrar o verdadeiro valor da comunidade e transformar a forma como ela é vista. Criado para dar voz à Borborema, o projeto une informação, humor, utilidade pública e ações sociais para fortalecer o sentimento de pertencimento e valorizar quem faz parte dessa história.
+            </p>
+            <p id="about-project-text-2" class="text-brandMuted leading-8 text-base sm:text-lg">
+              Com uma comunicação próxima do povo e enraizada na realidade local, a página se tornou referência para moradores, apoiadores, comerciantes e pessoas que acreditam na força da comunidade.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Missão</p>
+              <p id="mission-text" class="text-brandMuted leading-7">Informar, conectar, valorizar e gerar oportunidades para a comunidade.</p>
+            </div>
+            <div class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Visão</p>
+              <p id="vision-text" class="text-brandMuted leading-7">Ser a principal referência de mídia comunitária da Borborema e região.</p>
+            </div>
+            <div class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6 sm:col-span-2">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Valores</p>
+              <div id="values-grid" class="flex flex-wrap gap-3">
+                <span class="rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted">Verdade</span>
+                <span class="rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted">Respeito</span>
+                <span class="rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted">União</span>
+                <span class="rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted">Comunidade em primeiro lugar</span>
+                <span class="rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted">Oportunidade</span>
+                <span class="rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted">Identidade local</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fundador" class="section-divider py-14 md:py-20 bg-brandBgSoft">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[0.85fr,1.15fr] gap-10 items-center">
+          <div>
+            <div class="rounded-[2rem] bg-brandCard border border-white/10 p-2 gold-ring">
+              <img id="founder-image" src="https://i.imgur.com/NdwJ4Zm.jpeg" alt="Melk" class="w-full h-[500px] object-cover rounded-[1.5rem]">
+            </div>
+          </div>
+          <div>
+            <span class="inline-flex items-center gap-2 text-brandGold bg-brandGold/10 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+              <i class="fas fa-user"></i> Quem está por trás do projeto
+            </span>
+            <h2 id="founder-name" class="text-3xl sm:text-4xl font-bold mb-2">Melquezedeque Gomes de Araújo</h2>
+            <p id="founder-meta" class="text-brandGold font-semibold mb-5">Melk • Fundador • Nascido em 17 de junho de 1991</p>
+            <p id="founder-bio" class="text-brandMuted leading-8 text-base sm:text-lg mb-6">
+              Nascido e criado na Borborema, Melk transformou sua conexão com a comunidade em um projeto de comunicação, valorização local e impacto social. Com carisma, proximidade com o povo e olhar voltado para o coletivo, tornou-se uma referência dentro da comunidade.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted">Liderança comunitária</span>
+              <span class="rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted">Comunicação local</span>
+              <span class="rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted">Impacto social</span>
+            </div>
+            <a id="founder-cta-link" href="https://wa.me/5581979030733" target="_blank" class="inline-flex items-center gap-2 bg-brandGold hover:bg-brandGoldSoft text-black transition rounded-full px-7 py-4 text-sm font-bold uppercase tracking-wide shadow-soft">
+              <i class="fab fa-whatsapp"></i> Falar com a página
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modulos" class="section-divider py-14 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="inline-flex items-center gap-2 text-brandGold bg-brandGold/10 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+            <i class="fas fa-layer-group"></i> Frentes do projeto
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">A plataforma foi pensada para crescer de forma organizada.</h2>
+          <p class="text-brandMuted leading-7">Cada módulo abaixo já nasce com espaço preparado para o painel administrativo controlar conteúdo, status, ordem e destaques.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-5 gap-5" id="modules-grid">
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6">
+            <div class="w-12 h-12 rounded-2xl bg-brandGold/10 text-brandGold flex items-center justify-center mb-5"><i class="fas fa-handshake text-xl"></i></div>
+            <h3 class="text-xl font-bold mb-3">Parceiros</h3>
+            <p class="text-sm leading-7 text-brandMuted">Divulgação de negócios, serviços, apoiadores e marcas ligadas à comunidade.</p>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6">
+            <div class="w-12 h-12 rounded-2xl bg-brandGold/10 text-brandGold flex items-center justify-center mb-5"><i class="fas fa-newspaper text-xl"></i></div>
+            <h3 class="text-xl font-bold mb-3">Notícias</h3>
+            <p class="text-sm leading-7 text-brandMuted">Informação local, utilidade pública, destaques e conteúdos de interesse da população.</p>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6">
+            <div class="w-12 h-12 rounded-2xl bg-brandGold/10 text-brandGold flex items-center justify-center mb-5"><i class="fas fa-calendar-check text-xl"></i></div>
+            <h3 class="text-xl font-bold mb-3">Eventos/Ações</h3>
+            <p class="text-sm leading-7 text-brandMuted">Ações sociais, campanhas, agendas e mobilizações importantes para a comunidade.</p>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6">
+            <div class="w-12 h-12 rounded-2xl bg-brandGold/10 text-brandGold flex items-center justify-center mb-5"><i class="fas fa-podcast text-xl"></i></div>
+            <h3 class="text-xl font-bold mb-3">BorboCast</h3>
+            <p class="text-sm leading-7 text-brandMuted">Entrevistas, conversas e episódios com pessoas, histórias e vozes da região.</p>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6">
+            <div class="w-12 h-12 rounded-2xl bg-brandGold/10 text-brandGold flex items-center justify-center mb-5"><i class="fas fa-store text-xl"></i></div>
+            <h3 class="text-xl font-bold mb-3">BorboShop</h3>
+            <p class="text-sm leading-7 text-brandMuted">Monetização com produtos, vitrines locais, afiliados e futuras campanhas comerciais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="noticias" class="section-divider py-14 md:py-20 bg-brandBgSoft">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">
+          <div>
+            <span class="inline-flex items-center gap-2 text-brandGold bg-brandGold/10 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+              <i class="fas fa-newspaper"></i> Notícias
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-3">Destaques da comunidade</h2>
+            <p class="text-brandMuted max-w-2xl">Seção pronta para receber cards dinâmicos de notícias publicadas pelo painel.</p>
+          </div>
+          <a href="https://wa.me/5581979030733" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-brandGold hover:text-brandGoldSoft">
+            enviar informação <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div id="news-grid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <article class="rounded-[1.8rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-56 bg-gradient-to-br from-brandGold/25 to-black"></div>
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Exemplo</p>
+              <h3 class="text-2xl font-bold mb-3">Área pronta para notícia em destaque</h3>
+              <p class="text-sm leading-7 text-brandMuted clamp-3">Quando o painel estiver ligado, os cards desta seção podem ser alimentados automaticamente com título, resumo, categoria, imagem e link.</p>
+            </div>
+          </article>
+          <article class="rounded-[1.8rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-56 bg-gradient-to-br from-white/10 to-black"></div>
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Exemplo</p>
+              <h3 class="text-2xl font-bold mb-3">Publicações organizadas por categoria</h3>
+              <p class="text-sm leading-7 text-brandMuted clamp-3">Notícias locais, utilidade pública, alertas, avisos e destaques podem seguir estrutura modular e escalável.</p>
+            </div>
+          </article>
+          <article class="rounded-[1.8rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-56 bg-gradient-to-br from-brandGold/15 to-black"></div>
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Exemplo</p>
+              <h3 class="text-2xl font-bold mb-3">Conteúdo pensado para crescer sem bagunça</h3>
+              <p class="text-sm leading-7 text-brandMuted clamp-3">A home permanece leve enquanto o painel administra publicação, edição, ordem e status dos blocos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="eventos" class="section-divider py-14 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">
+          <div>
+            <span class="inline-flex items-center gap-2 text-brandGold bg-brandGold/10 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+              <i class="fas fa-calendar-check"></i> Eventos e ações
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-3">Mobilização social em evidência</h2>
+            <p class="text-brandMuted max-w-2xl">Campanhas, mutirões, agendas e ações da comunidade poderão aparecer aqui com data, local e CTA.</p>
+          </div>
+        </div>
+        <div id="events-grid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <article class="rounded-[1.8rem] bg-brandCard border border-white/10 p-6 shadow-soft">
+            <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Evento modelo</p>
+            <h3 class="text-2xl font-bold mb-3">Espaço para ações e eventos cadastrados no painel</h3>
+            <p class="text-sm leading-7 text-brandMuted mb-5">Cada item poderá exibir data, local, descrição curta, imagem e link de participação.</p>
+            <div class="flex items-center gap-3 text-sm text-brandMuted">
+              <i class="fas fa-location-dot text-brandGold"></i> Borborema
+            </div>
+          </article>
+          <article class="rounded-[1.8rem] bg-brandCard border border-white/10 p-6 shadow-soft">
+            <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Agenda</p>
+            <h3 class="text-2xl font-bold mb-3">Seção ideal para campanhas sociais</h3>
+            <p class="text-sm leading-7 text-brandMuted mb-5">Ações beneficentes, mobilizações comunitárias e avisos de participação pública entram aqui.</p>
+            <div class="flex items-center gap-3 text-sm text-brandMuted">
+              <i class="fas fa-clock text-brandGold"></i> Data e horário controlados pelo painel
+            </div>
+          </article>
+          <article class="rounded-[1.8rem] bg-brandCard border border-white/10 p-6 shadow-soft">
+            <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Impacto</p>
+            <h3 class="text-2xl font-bold mb-3">Visual leve, mas pronto para expansão</h3>
+            <p class="text-sm leading-7 text-brandMuted mb-5">A ideia é manter a home enxuta e deixar o painel controlar ordem, destaque e publicação.</p>
+            <div class="flex items-center gap-3 text-sm text-brandMuted">
+              <i class="fas fa-bolt text-brandGold"></i> Crescimento modular
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="parceiros" class="section-divider py-14 md:py-20 bg-brandBgSoft">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">
+          <div>
+            <span class="inline-flex items-center gap-2 text-brandGold bg-brandGold/10 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+              <i class="fas fa-handshake"></i> Parceiros
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-3">Quem fortalece a comunidade com a gente</h2>
+            <p class="text-brandMuted max-w-2xl">Espaço estratégico para parceiros, apoiadores e negócios locais em destaque.</p>
+          </div>
+          <a href="https://wa.me/5581979030733" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-brandGold hover:text-brandGoldSoft">
+            quero ser parceiro <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div id="partners-grid" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6 text-center shadow-soft">
+            <div class="w-20 h-20 rounded-full bg-brandGold/10 border border-brandGold/15 mx-auto mb-5 flex items-center justify-center text-brandGold text-2xl"><i class="fas fa-store"></i></div>
+            <h3 class="text-xl font-bold mb-2">Parceiro modelo</h3>
+            <p class="text-sm leading-7 text-brandMuted">Área preparada para logo, descrição, contato e categoria do parceiro.</p>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6 text-center shadow-soft">
+            <div class="w-20 h-20 rounded-full bg-brandGold/10 border border-brandGold/15 mx-auto mb-5 flex items-center justify-center text-brandGold text-2xl"><i class="fas fa-utensils"></i></div>
+            <h3 class="text-xl font-bold mb-2">Comércio local</h3>
+            <p class="text-sm leading-7 text-brandMuted">Vitrine organizada para negócios da região, com potencial comercial real.</p>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6 text-center shadow-soft">
+            <div class="w-20 h-20 rounded-full bg-brandGold/10 border border-brandGold/15 mx-auto mb-5 flex items-center justify-center text-brandGold text-2xl"><i class="fas fa-briefcase"></i></div>
+            <h3 class="text-xl font-bold mb-2">Serviços</h3>
+            <p class="text-sm leading-7 text-brandMuted">Prestadores locais poderão ser exibidos em categorias controladas pelo painel.</p>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 p-6 text-center shadow-soft">
+            <div class="w-20 h-20 rounded-full bg-brandGold/10 border border-brandGold/15 mx-auto mb-5 flex items-center justify-center text-brandGold text-2xl"><i class="fas fa-bullseye"></i></div>
+            <h3 class="text-xl font-bold mb-2">Monetização</h3>
+            <p class="text-sm leading-7 text-brandMuted">Estrutura pronta para futuros destaques pagos e divulgação patrocinada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="borbocast" class="section-divider py-14 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">
+          <div>
+            <span class="inline-flex items-center gap-2 text-brandGold bg-brandGold/10 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+              <i class="fas fa-podcast"></i> BorboCast
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-3">Conversas, vozes e histórias da região</h2>
+            <p class="text-brandMuted max-w-2xl">Seção pronta para cards de episódios, convidados, thumbnails e links externos.</p>
+          </div>
+        </div>
+        <div id="cast-grid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <article class="rounded-[1.8rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-56 bg-gradient-to-br from-brandGold/15 to-black flex items-center justify-center text-brandGold text-5xl"><i class="fas fa-circle-play"></i></div>
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Episódio modelo</p>
+              <h3 class="text-2xl font-bold mb-3">Área pronta para receber episódios do BorboCast</h3>
+              <p class="text-sm leading-7 text-brandMuted">O painel poderá controlar título, convidado, thumbnail, link e destaque.</p>
+            </div>
+          </article>
+          <article class="rounded-[1.8rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-56 bg-gradient-to-br from-white/10 to-black flex items-center justify-center text-brandGold text-5xl"><i class="fas fa-microphone-lines"></i></div>
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Entrevistas</p>
+              <h3 class="text-2xl font-bold mb-3">Perfeito para nomes fortes da comunidade</h3>
+              <p class="text-sm leading-7 text-brandMuted">Lideranças, moradores, convidados e personagens da região podem ganhar destaque aqui.</p>
+            </div>
+          </article>
+          <article class="rounded-[1.8rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-56 bg-gradient-to-br from-brandGold/10 to-black flex items-center justify-center text-brandGold text-5xl"><i class="fas fa-video"></i></div>
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-3">Escala</p>
+              <h3 class="text-2xl font-bold mb-3">Estrutura preparada para crescer</h3>
+              <p class="text-sm leading-7 text-brandMuted">Dá para começar simples e evoluir depois para episódios, cortes e página interna própria.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="section-divider py-14 md:py-20 bg-brandBgSoft">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">
+          <div>
+            <span class="inline-flex items-center gap-2 text-brandGold bg-brandGold/10 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+              <i class="fas fa-store"></i> BorboShop
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-3">Base da monetização futura</h2>
+            <p class="text-brandMuted max-w-2xl">Produtos próprios, vitrines locais, ofertas e campanhas podem viver aqui com gestão via painel.</p>
+          </div>
+        </div>
+        <div id="shop-grid" class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-52 bg-gradient-to-br from-brandGold/15 to-black"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-bold mb-2">Produto modelo</h3>
+              <p class="text-brandGold font-extrabold text-lg mb-3">R$ 00,00</p>
+              <p class="text-sm leading-7 text-brandMuted">Placeholder para item do BorboShop com imagem, preço, descrição e link.</p>
+            </div>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-52 bg-gradient-to-br from-white/10 to-black"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-bold mb-2">Vitrine local</h3>
+              <p class="text-brandGold font-extrabold text-lg mb-3">Monetização</p>
+              <p class="text-sm leading-7 text-brandMuted">Pode receber anúncios, ofertas ou produtos da própria marca futuramente.</p>
+            </div>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-52 bg-gradient-to-br from-brandGold/10 to-black"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-bold mb-2">Afiliados</h3>
+              <p class="text-brandGold font-extrabold text-lg mb-3">Escalável</p>
+              <p class="text-sm leading-7 text-brandMuted">Estrutura pronta para trabalhar campanhas externas com mais controle no futuro.</p>
+            </div>
+          </article>
+          <article class="rounded-[1.75rem] bg-brandCard border border-white/10 overflow-hidden shadow-soft">
+            <div class="h-52 bg-gradient-to-br from-brandGold/18 to-black"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-bold mb-2">Produtos da marca</h3>
+              <p class="text-brandGold font-extrabold text-lg mb-3">Identidade</p>
+              <p class="text-sm leading-7 text-brandMuted">Camisas, acessórios, campanhas e itens ligados ao projeto podem entrar aqui.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section-divider py-14 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-brandGold/15 bg-gradient-to-br from-brandGold/10 to-white/[0.02] p-7 sm:p-10 shadow-soft">
+          <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-8 items-center">
+            <div>
+              <span class="inline-flex items-center gap-2 text-brandGold bg-black/30 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-4 border border-brandGold/15">
+                <i class="fas fa-comments"></i> Contato oficial
+              </span>
+              <h2 class="text-3xl sm:text-4xl font-bold mb-4">Fale com a Borborema Ordinária</h2>
+              <p class="text-brandMuted leading-8 text-base sm:text-lg max-w-2xl">
+                Quer enviar notícia, divulgar negócio, propor parceria ou falar com a página? O atendimento principal acontece pelo WhatsApp oficial.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                <a id="contact-whatsapp-link" href="https://wa.me/5581979030733" target="_blank" class="inline-flex items-center justify-center gap-2 bg-brandGold hover:bg-brandGoldSoft text-black transition rounded-full px-7 py-4 text-sm font-bold uppercase tracking-wide shadow-soft">
+                  <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                </a>
+                <a id="contact-phone-link" href="tel:+5581979030733" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-brandText transition rounded-full px-7 py-4 text-sm font-bold uppercase tracking-wide border border-white/10">
+                  <i class="fas fa-phone"></i> Ligar agora
+                </a>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="rounded-[1.6rem] bg-black/35 border border-white/10 p-6">
+                <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-2">WhatsApp oficial</p>
+                <p id="contact-whatsapp-number" class="text-2xl font-extrabold">+55 81 97903-0733</p>
+              </div>
+              <div class="rounded-[1.6rem] bg-black/35 border border-white/10 p-6">
+                <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-2">Origem</p>
+                <p class="text-lg font-extrabold">Borborema</p>
+                <p class="text-sm text-brandMuted mt-2">Recife / Jaboatão</p>
+              </div>
+              <div class="rounded-[1.6rem] bg-black/35 border border-white/10 p-6 sm:col-span-2">
+                <p class="text-xs uppercase tracking-[0.22em] text-brandGold font-bold mb-2">Canais preparados</p>
+                <div class="flex flex-wrap gap-3 mt-3">
+                  <a id="footer-instagram-link" href="#" target="_blank" class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted hover:text-brandText"><i class="fab fa-instagram text-brandGold"></i> Instagram</a>
+                  <a id="footer-youtube-link" href="#" target="_blank" class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted hover:text-brandText"><i class="fab fa-youtube text-brandGold"></i> YouTube</a>
+                  <a id="footer-tiktok-link" href="#" target="_blank" class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/5 border border-white/10 text-sm text-brandMuted hover:text-brandText"><i class="fab fa-tiktok text-brandGold"></i> TikTok</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section-divider bg-black py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-serif text-2xl font-bold text-brandGold">BORBOREMA ORDINÁRIA</p>
+      <p class="text-sm text-brandMuted mt-3">Projeto comunitário criado para informar, conectar e valorizar a Borborema.</p>
+      <p class="text-xs text-white/35 mt-3">Estrutura frontal pronta para integração com painel administrativo, Firebase e renderização dinâmica.</p>
+    </div>
+  </footer>
+</body>
+</html>
